@@ -5,9 +5,9 @@ import sun from '../../assets/suns.png'
 const Home = () => {
     return (
         <View style = {styles.container}>
-            <Image source = {sun} style={styles.logo}/>
+            <Image source = {sun} style={styles.sunimage}/>
             <Text style={styles.title}>Good Morning</Text>
-            <Text style={styles.subtitle}>Ready to work?</Text>
+            <Text style={[styles.subtitle, {fontSize:19}]}>Ready for the latest updates?</Text>
             <Card />
         </View>
         
@@ -18,7 +18,7 @@ const Card = () => {
     return (
         <View>
             <Link href="/spacex" style={styles.buttonstyle}>
-                <Text style={styles.buttontext}>Let's get to work</Text>
+                <Text style={styles.buttontext}>Let's dive to in</Text>
             </Link>
         </View>
     )
@@ -35,12 +35,12 @@ const styles = StyleSheet.create({
     },
 
     title:{
-        fontSize:40,
+        fontSize:43,
         fontWeight: 'bold',
     },
 
     subtitle:{
-        fontSize: 30,
+        
         marginBottom: 15,
     },
 
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
         shadowRadius:0,
         elevation:5,
         marginTop: 70,
+        marginBottom:60,
 
     },
 
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
         
     },
 
-    logo:{
+    sunimage:{
         width: 150,
         height: 150,
     },

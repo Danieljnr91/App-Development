@@ -1,15 +1,36 @@
 import { Link } from 'expo-router'
-import { Image, StyleSheet, Text, View } from "react-native"
+import { useState } from 'react'
+import { Image, Pressable, StyleSheet, Text, View } from "react-native"
 import sun from '../../assets/suns.png'
 
+
 const Home = () => {
+    const [darkmode, setDarkmode] = useState(false)
+
     return (
-        <View style = {styles.container}>
-            <Image source = {sun} style={styles.sunimage}/>
-            <Text style={styles.title}>Good Morning</Text>
-            <Text style={[styles.subtitle, {fontSize:19}]}>Ready for the latest updates?</Text>
+        <View style={{flex:1, backgroundColor:darkmode ? 'white' : 'black'}}>
+            <View style = {[styles.container, ]}>
+                <Image source = {sun} style={styles.sunimage}/>
+                <Text style={[styles.title,{color: darkmode ? 'black' : 'white'}]}>Good Morning</Text>
+                <Text style={[styles.subtitle, {fontSize:19,color: darkmode ? 'black' : 'white'}]}>Ready for the latest updates?</Text>
             <Card />
+            </View>
+
+            <View style={{marginBottom:30,width:'35%',alignSelf:'flex-start',marginLeft:10}}>
+                <Pressable style={{backgroundColor:'rgba(110, 71, 238, 0.72)',height:37,borderRadius:15, justifyContent:'center'}}
+                    onPress={() => setDarkmode(!darkmode)}
+                >
+                    <Text style={{color:'white',textAlign:'center'}}>Toggle theme</Text>
+
+                </Pressable>
+                  
+            
+            </View>
         </View>
+           
+
+        
+        
         
     )
 }
@@ -18,7 +39,7 @@ const Card = () => {
     return (
         <View>
             <Link href="/spacex" style={styles.buttonstyle}>
-                <Text style={styles.buttontext}>Let's dive to in</Text>
+                <Text style={styles.buttontext}>Let's dive in</Text>
             </Link>
         </View>
     )
@@ -31,7 +52,6 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor:'rgb(227, 226, 226)'
     },
 
     title:{

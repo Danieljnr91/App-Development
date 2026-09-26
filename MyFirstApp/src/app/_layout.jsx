@@ -5,14 +5,12 @@ import { StyleSheet } from 'react-native'
 const RootLayout = () => {
     return (
         <Stack screenOptions={{
-            headerStyle:{backgroundColor: 'rgb(228, 227, 227)'},
-           
-            
-
+            headerStyle:{backgroundColor: 'rgb(228, 227, 227)'}
         }}>
             <Stack.Screen name='home' options={{title:'HomePage'}}/>
             <Stack.Screen name='spacex' options={{title:'For You'}}/>
             <Stack.Screen name='weeklyImages' options={{title:'Images of the Week'}}/>
+            <Stack.Screen name='socials' options={{title:'Our Socials'}}/>
         </Stack>
 
         

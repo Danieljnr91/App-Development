@@ -5,7 +5,7 @@ import sun from '../../assets/suns.png'
 
 
 const Home = () => {
-    const [darkmode, setDarkmode] = useState(false)
+    const [darkmode, setDarkmode] = useState(true)
 
     return (
         <View style={{flex:1, backgroundColor:darkmode ? 'white' : 'black'}}>

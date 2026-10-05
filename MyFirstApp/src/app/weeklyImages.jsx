@@ -1,17 +1,10 @@
-import {StyleSheet,ScrollView,Image,View, Pressable} from 'react-native'
-import WeeklyImagesPage,{ActualImages} from '../components/themedImages'
 import { Link } from 'expo-router'
+import { Image, Pressable, ScrollView, StyleSheet, View } from 'react-native'
+import WeeklyImagesPage, { ActualImages } from '../components/themedImages'
 
 const ImagePage = ({}) => {
     return(
             <WeeklyImagesPage>
-                <View style={{position:'absolute',alignSelf:'flex-end',margin:9,backgroundColor:'rgb(136, 24, 188)',borderRadius:15,padding:2}}>
-                    <Link href="/socials" asChild>
-                        <Pressable>
-                            <Image source={require('../../assets/arrow.png')} style={{width:40,height:40}}/>
-                        </Pressable>
-                    </Link>
-                </View>
                 <MainDisplay />
             </WeeklyImagesPage>
     )
@@ -22,6 +15,13 @@ const MainDisplay = ({}) => {
 
             
             <ScrollView >
+                 <View style={{position:'absolute',alignSelf:'flex-end',margin:9,backgroundColor:'rgb(136, 24, 188)',borderRadius:15,padding:2}}>
+                    <Link href="/socials" asChild>
+                        <Pressable>
+                            <Image source={require('../../assets/arrow.png')} style={{width:40,height:40}}/>
+                        </Pressable>
+                    </Link>
+                </View>
                 <ActualImages>
                     <Image source={require('../../assets/weeklyImages/img1.jpg')} style={styles.imgstyle}/>
                     <Image source={require('../../assets/weeklyImages/img2.jpg')} style={styles.imgstyle}/>

@@ -12,10 +12,8 @@ const ImagePage = ({}) => {
 
 const MainDisplay = ({}) => {
     return(
-
-            
             <ScrollView >
-                 <View style={{position:'absolute',alignSelf:'flex-end',margin:9,backgroundColor:'rgb(136, 24, 188)',borderRadius:15,padding:2}}>
+                 <View style={{position:'absolute',alignSelf:'flex-end',margin:9,backgroundColor:'rgb(110, 71, 238, 0.72)',borderRadius:7,padding:2}}>
                     <Link href="/socials" asChild>
                         <Pressable>
                             <Image source={require('../../assets/arrow.png')} style={{width:40,height:40}}/>
@@ -69,7 +67,7 @@ const styles = StyleSheet.create({
     imgstyle:{
         height:250,
         width:150,
-        borderRadius:15,
+        borderRadius:8,
         marginBottom:25,
     }
     
